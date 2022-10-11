@@ -1,0 +1,42 @@
+management:
+   security:
+      enabled: false
+machinelearningops:
+   userName: minioadmin
+   paswrd: minioadmin
+   url: "http://127.0.0.1:9000"
+   bucketName: mlops-api
+   scriptFolderPath: script
+   dataFolderPath: data
+   modelFolderPath: model
+
+ml-ops:
+  scriptPath: /Users/deepak.patra/ml-ops/scripts/
+logging.level.root: WARN
+logging.level.com.rakuten: TRACE
+sample-files:
+  dataSamplePath: /scripts/data_sample.zip
+  codeSamplePath: /scripts/code_sample.zip
+
+cron.expression: 0 11 07 * * WED
+server.port: 8888
+    
+spring:
+   servlet.multipart.max-file-size: -1
+   servlet.multipart.max-request-size: -1
+   jpa:
+      database-platform: org.hibernate.dialect.MySQL8Dialect
+      hibernate:
+         ddl-auto: update
+   datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/mlops?characterEncoding=utf8&enabledTLSProtocols=TLSv1.2&useSSL=false
+      username: root
+      password:
+      #username: user
+      #password: P@ssW0rd
+      show-sql: true
+      
+
+logging.level.org.hibernate.SQL: DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE

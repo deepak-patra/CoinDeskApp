@@ -1,0 +1,44 @@
+endpoints:
+  enabled: false
+  info:
+    enabled: true
+  configprops:
+    enabled: true
+  env:
+    enabled: true
+  metrics:
+    enabled: true
+  health:
+    enabled: true
+  shutdown:
+    enabled: false
+
+
+springdoc:
+ swagger-ui:
+  disable-swagger-default-url: false
+
+management:
+  security:
+    enabled: true
+
+kafka:
+  commonPipeline: true
+
+systemProp:
+
+springdoc.swagger-ui.path: /swagger-ui-custom.html
+
+spring.main.allow-bean-definition-overriding: true
+management.endpoints.web.exposure.include: '*'
+management.endpoint.health.enabled: true
+management.endpoint.loggers.enabled: true
+#spring.autoconfigure.exclude: org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
+
+
+#management.endpoints.enabled-by-default: false
+#management.endpoint.info.enabled: true
+
+springdoc.paths-to-exclude: /swagger-resources/**, /v2/api-docs, /nedo/job
+server.port: 8888
+

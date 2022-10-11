@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{35}) - %msg %n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>/Users/deepak.patra/Documents/testdelete/app.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <fileNamePattern>/Users/deepak.patra/Documents/testdelete/app.%d{yyyy-MM-dd-HH}.log.zip</fileNamePattern>
+        <maxHistory>100</maxHistory>
+        <totalSizeCap>200MB</totalSizeCap>
+    </rollingPolicy>
+    <encoder>
+	   <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} RequestId %X{RequestId}
+		%magenta([%thread]) %highlight(%-5level) %logger{36}.%M - %msg%n
+	   </pattern>
+
+    </encoder>
+</appender>
+
+	<!-- <logger name="org.hibernate.type" additivity="false">
+		<level value="TRACE" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</logger> -->
+
+	<logger name="com.rakuten.rmdp" level="debug" />
+	<root level="WARN">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />     
+  </root>
+
+</configuration>

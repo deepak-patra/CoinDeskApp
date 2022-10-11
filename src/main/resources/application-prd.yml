@@ -1,0 +1,43 @@
+management:
+   security:
+      enabled: false
+machinelearningops:
+   userName: XE96XGGNQJZ9PZ97FQPP
+   paswrd: o+Km3b+pXP8ZynFPB+Spv6SA4jEnomNQmvtyP3Ne
+   url: "https://datalake.minio.prod.rmn.local"
+   bucketName: mlops-api
+   scriptFolderPath: script
+   dataFolderPath: data
+   modelFolderPath: model
+
+
+
+sample-files:
+  dataSamplePath: /opt/app/data_sample1.zip
+  codeSamplePath: /opt/app/code_sample1.zip
+
+ml-ops:
+  scriptPath: /mlops/scripts/
+
+cron.expression: 0 11 07 * * WED
+server.port: 8888
+    
+spring:
+   sql.init.mode: ALWAYS
+   sql.init.continue-on-error: true
+   servlet.multipart.max-file-size: -1
+   servlet.multipart.max-request-size: -1
+   jpa:
+      defer-datasource-initialization: true
+      database-platform: org.hibernate.dialect.MySQL8Dialect
+      hibernate:
+         ddl-auto: update
+   datasource:
+      generate-ddl: true
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://katib-mysql:3306/mlops?createDatabaseIfNotExist=true&characterEncoding=utf8&enabledTLSProtocols=TLSv1.2&useSSL=false
+      username: root
+      password: test@956fg
+      #username: user
+      #password: P@ssW0rd
+      #show-sql: true
