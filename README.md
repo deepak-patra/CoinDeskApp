@@ -1,4 +1,4 @@
-# Machine Learning ops
+# Test app
 This app help in all Machine Learning ops.
  1. Registering new data source.
  2. Updating already registered data source.
